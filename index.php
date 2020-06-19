@@ -128,7 +128,8 @@ Prototype code for a full-stack web development on LAMP stack (Linux, Apache, My
 EOF;
 
 print "<h4>Latest</h4>";
-$result = query("select * from tweets where uid not in (".implode(",", $banned).") order by date desc limit 100");
+# $result = query("select * from tweets where uid not in (".implode(",", $banned).") order by date desc limit 100");
+$result = query("select * from tweets order by date desc limit 100");
 	   
 $tweets = array();
 while($row = mysqli_fetch_assoc($result)){
